@@ -31,6 +31,7 @@ Before running the project, ensure you have:
    cd echo-products-api
    ```
 2. **Install dependencies**
+
    ```bash
    go mod download
    ```
@@ -38,6 +39,7 @@ Before running the project, ensure you have:
 3. **Configure database**
 
    Edit `config/db.go` with your PostgreSQL credentials:
+
    ```go
    dsn := "host=localhost user=your_user password=your_pass dbname=echo_products_api port=5432 sslmode=disable TimeZone=Asia/Jakarta"
    ```
@@ -57,19 +59,21 @@ By default, the API will start on port `:8080`.
 ## 📍 API Endpoints
 
 ### **Products**
-| Method | Endpoint             | Description               |
-|--------|----------------------|---------------------------|
-| GET    | `/products`          | List all products         |
-| GET    | `/products/:id`      | Get a product by ID       |
-| POST   | `/products`          | Create a new product      |
-| PUT    | `/products/:id`      | Update an existing product |
-| DELETE | `/products/:id`      | Delete a product          |
+
+| Method | Endpoint        | Description                |
+| ------ | --------------- | -------------------------- |
+| GET    | `/products`     | List all products          |
+| GET    | `/products/:id` | Get a product by ID        |
+| POST   | `/products`     | Create a new product       |
+| PUT    | `/products/:id` | Update an existing product |
+| DELETE | `/products/:id` | Delete a product           |
 
 ---
 
 ## 🧪 Example Requests
 
 ### Create a Product
+
 ```bash
 curl -X POST http://localhost:8080/products \
   -H "Content-Type: application/json" \
@@ -77,16 +81,19 @@ curl -X POST http://localhost:8080/products \
 ```
 
 ### Get All Products
+
 ```bash
 curl http://localhost:8080/products
 ```
 
 ### Get Product by ID
+
 ```bash
 curl http://localhost:8080/products/1
 ```
 
 ### Update a Product
+
 ```bash
 curl -X PUT http://localhost:8080/products/1 \
   -H "Content-Type: application/json" \
@@ -94,6 +101,7 @@ curl -X PUT http://localhost:8080/products/1 \
 ```
 
 ### Delete a Product
+
 ```bash
 curl -X DELETE http://localhost:8080/products/1
 ```
@@ -118,6 +126,7 @@ curl -X DELETE http://localhost:8080/products/1
 ## 🗄 Database Migrations (PostgreSQL)
 
 Your migrations are stored in the `migrations/` folder:
+
 ```
 migrations/
 ├── 001_create_products_table.up.sql
@@ -125,6 +134,7 @@ migrations/
 ```
 
 ### Install Migrate CLI
+
 ```bash
 # macOS
 brew install golang-migrate
@@ -133,16 +143,19 @@ sudo apt-get install migrate
 ```
 
 ### Run Migrations
+
 ```bash
 migrate -path ./migrations -database "postgres://your_user:your_pass@localhost:5432/echo_products_api?sslmode=disable" up
 ```
 
 ### Rollback Migration
+
 ```bash
 migrate -path ./migrations -database "postgres://your_user:your_pass@localhost:5432/echo_products_api?sslmode=disable" down
 ```
 
 ### Check Migration Version
+
 ```bash
 migrate -path ./migrations -database "postgres://your_user:your_pass@localhost:5432/echo_products_api?sslmode=disable" version
 ```
@@ -152,18 +165,3 @@ migrate -path ./migrations -database "postgres://your_user:your_pass@localhost:5
 ## 📜 License
 
 This project is licensed under the **Apache License 2.0**.
-
----
-
-## ❤️ Contributing
-
-Contributions are welcome! Open issues or submit pull requests.
-
----
-
-## ❓ Support
-
-If you need help, feel free to open an issue.
-
-Happy coding! 🚀
-
