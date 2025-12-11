@@ -1,4 +1,4 @@
-package main
+package model
 
 type Products struct {
 	ID          int     `gorm:"primaryKey" json:"id"`
