@@ -2,15 +2,18 @@ package main
 
 import (
 	"echo-products-api/config"
+	"echo-products-api/controller"
 	"net/http"
 
-	"echo-products-api/controller"
-
 	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 )
 
 func main() {
 	e := echo.New()
+
+	//Enable CORS
+	e.Use(middleware.CORS())
 
 	// Initialize DB
 	config.DatabaseInit()
