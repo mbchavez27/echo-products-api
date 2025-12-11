@@ -9,7 +9,7 @@ import (
 	"echo-products-api/model"
 )
 
-func createProduct(c echo.Context) error {
+func CreateProduct(c echo.Context) error {
 	product := new(model.Products)
 	db := config.DB()
 
@@ -44,7 +44,7 @@ func createProduct(c echo.Context) error {
 	return c.JSON(http.StatusOK, response)
 }
 
-func updateProduct(c echo.Context) error {
+func UpdateProduct(c echo.Context) error {
 	id := c.Param("id")
 	product := new(model.Products)
 	db := config.DB()
@@ -86,7 +86,7 @@ func updateProduct(c echo.Context) error {
 	return c.JSON(http.StatusOK, response)
 }
 
-func deleteProduct(c echo.Context) error {
+func DeleteProduct(c echo.Context) error {
 	id := c.Param("id")
 	db := config.DB()
 
@@ -107,7 +107,7 @@ func deleteProduct(c echo.Context) error {
 	return c.JSON(http.StatusOK, response)
 }
 
-func getProducts(c echo.Context) error {
+func GetProducts(c echo.Context) error {
 	db := config.DB()
 	products := []model.Products{}
 
@@ -125,7 +125,7 @@ func getProducts(c echo.Context) error {
 	return c.JSON(http.StatusOK, response)
 }
 
-func getProductByID(c echo.Context) error {
+func GetProductByID(c echo.Context) error {
 	id := c.Param("id")
 	db := config.DB()
 	product := new(model.Products)
