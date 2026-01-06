@@ -3,17 +3,17 @@
 **Echo Products API** is a RESTful API built in **Go** using the **Echo** web framework and **GORM** for PostgreSQL.  
 It provides endpoints for managing products and demonstrates a clean project structure with controllers, models, and migrations.
 
-## 📦 Features
+## Features
 
-- 🧱 Clean project structure (`config`, `controller`, `model`, `migrations`)
-- 🚀 RESTful CRUD endpoints for products
-- 📡 Built with **Echo** — fast and minimal HTTP framework
-- 📜 GORM integration for PostgreSQL
-- 📦 Go modules for dependency management
+- Clean project structure (`config`, `controller`, `model`, `migrations`)
+- RESTful CRUD endpoints for products
+- Built with **Echo** — fast and minimal HTTP framework
+- GORM integration for PostgreSQL
+- Go modules for dependency management
 
 ---
 
-## 🧠 Requirements
+## Requirements
 
 Before running the project, ensure you have:
 
@@ -23,7 +23,7 @@ Before running the project, ensure you have:
 
 ---
 
-## 🛠 Installation
+## Installation
 
 1. **Clone the repository**
    ```bash
@@ -46,7 +46,7 @@ Before running the project, ensure you have:
 
 ---
 
-## 🚀 Running the Server
+## Running the Server
 
 ```bash
 go run server.go
@@ -56,7 +56,7 @@ By default, the API will start on port `:8080`.
 
 ---
 
-## 📍 API Endpoints
+## API Endpoints
 
 ### **Products**
 
@@ -70,7 +70,7 @@ By default, the API will start on port `:8080`.
 
 ---
 
-## 🧪 Example Requests
+## Example Requests
 
 ### Create a Product
 
@@ -108,7 +108,7 @@ curl -X DELETE http://localhost:8080/products/1
 
 ---
 
-## 🧩 Project Structure
+## Project Structure
 
 ```
 .
@@ -162,6 +162,6 @@ migrate -path ./migrations -database "postgres://your_user:your_pass@localhost:5
 
 ---
 
-## 📜 License
+## License
 
 This project is licensed under the **Apache License 2.0**.
